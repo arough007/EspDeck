@@ -12,41 +12,31 @@ ESPDeck provides a macropad type input set to Home Assistant based on ESPHome. T
   * Double Click
   * Click and Hold
 
-See also the ![Novelkey Novelty Big Switch Macropad](/novelkey-big-switch/README.md) and the previous generation EspDecks ([Gen 1](GEN1_README.md), [Gen 2](GEN2_README.md)) in this repository.
-
 # Hardware Used
   * 1 x ESP8266 / NodeMCU
   * 9 x Relegendable KeyCaps (waterslide decal paper can also be used with existing keycaps, especially blank ones)
   * 9 x Mechanical key switches
-  * Hot Glue
   * 3d printer material
-  * various wire
+  * PCB (manufactured via JLCPCB)
+
+# Construction
+
+ - Solder the vertical key row first.
+ - After that solder the ESP to the other site.
+ - You can then solder the rest of the keys.
+   - You maybe have to clip the pins of the ESP to fit the keycaps or remove some of the plastic on the bottom of the keys if the solder joints are too big.
 
 # Case
 
-Case design based off of: https://www.thingiverse.com/thing:5204033. I extended the height of the case for my inefficient use of space inside of it, I also made some modifications to better hold the Esp8266. The top of the case is currently press fit or hot glued on, though I'll be working on making it a screw in place top in the future.
+Case completely designed from scratch.
+The top part should be printed with the grid on top and supports enabled. This way the surface finish is better.
+The bottom part should also have supports enabled to print the overhangs on the clips correctly.
 
-Case design can also be found here: https://www.thingiverse.com/thing:5223223
-
-# Wiring
-The wiring is simple enough, we make use of the matrix keypad feature and wire the columns and rows to inputs on the ESP. We avoid GPIO15 as it doesn't have an internal pullup as well, simplifying our wiring.
-
-![Third Generation Circuit Diagram](/assets/images/circuit-gen3.svg)
 
 # Configuration
 
-keypad3.yaml
+keypad.yaml
 
-# Printing Instructions
-Print one each of:
-  * MacroPadBottomExtended.stl
-  * MacroPadTop.stl
-
-These can be printed with low infill for speed.
 
 # Contributing
 Contributions are welcome to the project
-
-# Change Log
-
-  * With generation 3, we begin to use the Matrix Keypad feature of EspHome, simplifying the wiring.
